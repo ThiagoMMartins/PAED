@@ -1,0 +1,31 @@
+# CREATE DATABASE IF NOT EXISTS USCS-SAM;
+#ERRADO - não pode usar hifen;
+
+CREATE DATABASE IF NOT EXISTS USCS_SAM;
+
+USE USCS_SAM;
+
+CREATE TABLE IF NOT EXISTS `aluno` (
+`id` int PRIMARY KEY NOT NULL AUTO_INCREMENT UNIQUE,
+`nome` varchar(50) NOT NULL,
+`login` varchar(15) NOT NULL,
+`senha` varchar(15) NOT NULL,
+`ingresso` date NOT NULL,
+`ciclo` int NOT NULL,
+`email` varchar(50) DEFAULT NULL
+);
+
+# CREATE TABLE `disciplina...
+# Error Code: 1050. Table &#39;disciplina&#39; already exists
+
+show databases;
+SHOW TABLES FROM USCS_SAM;
+
+# ou
+
+use USCS_SAM;
+SHOW tables;
+
+INSERT into aluno (id, nome, login, senha, ingresso, ciclo, email) values (1, &#39;Samaris&#39;, &#39;Sam&#39;,
+&#39;1234&#39;, 1987, 1, &#39;profa_samaris@yahoo.com.br&#39;);
+select * from aluno;
